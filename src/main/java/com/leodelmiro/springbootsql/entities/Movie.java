@@ -1,7 +1,9 @@
 package com.leodelmiro.springbootsql.entities;
 
+import javax.persistence.Entity;
 import java.io.Serializable;
 
+@Entity
 public class Movie extends Media implements Serializable {
     private static final long serialVersionUID = 1L;
 
@@ -16,10 +18,6 @@ public class Movie extends Media implements Serializable {
         super(id, name, image);
         this.runtime = runtime;
         this.franchise = franchise;
-    }
-
-    public static long getSerialVersionUID() {
-        return serialVersionUID;
     }
 
     public Integer getRuntime() {

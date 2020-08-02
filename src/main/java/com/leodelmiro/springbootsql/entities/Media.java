@@ -1,9 +1,18 @@
 package com.leodelmiro.springbootsql.entities;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
 import java.util.Objects;
 
+@Entity
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 public abstract class Media {
+
+    @Id
     private Long id;
+
     private String name;
     private String image;
 

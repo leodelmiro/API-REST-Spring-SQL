@@ -1,12 +1,17 @@
 package com.leodelmiro.springbootsql.entities;
 
+import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Objects;
 
+@Entity
 public class Platform implements Serializable {
     private static final long serialVersionUID = 1L;
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private String name;
 
     public Platform(){
@@ -16,10 +21,6 @@ public class Platform implements Serializable {
     public Platform(Long id, String name) {
         this.id = id;
         this.name = name;
-    }
-
-    public static long getSerialVersionUID() {
-        return serialVersionUID;
     }
 
     public Long getId() {
